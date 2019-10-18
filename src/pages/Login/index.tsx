@@ -9,6 +9,11 @@ import { User } from "types/User";
 import { isEmail } from "utils/index";
 import "./styles.module.scss";
 
+const initialUserState: User = {
+  email: "",
+  password: ""
+};
+
 type State = {
   user: User;
   isLogedIn: boolean;
@@ -22,30 +27,34 @@ type Props = {
 
 class LoginPage extends Component<Props, State> {
   state: State = {
-    user: {} as User,
+    user: initialUserState,
     isLogedIn: false
   };
 
   validateForm = (email: string, password: string) => {
-    console.log(email);
-    console.log(password);
     let userAccount = {
       email: "test@gmail.com",
       password: "123"
     };
 
-    if (isEmail(email)) {
-      console.log("Correo hace match");
+    if (
+      isEmail(email) &&
+      password !== "" &&
+      (userAccount.email === email && userAccount.password === password)
+    ) {
+      this.handleSubmit();
+    } else {
+      console.log("correo o contraseña incorrectos");
     }
-    if (password !== "") {
-      console.log("contraseña hace match");
-    }
-    return true;
   };
 
-  // handleSubmit = () => {
-  //   console.log("Se enviará la info");
-  // };
+  handleSubmit = () => {
+    const { user } = this.state;
+    this.props.onLoginSuccessful(user.email, user.password);
+    if (this.props.user.isLoggedIn) {
+      this.props.history.push("/");
+    }
+  };
 
   handleChange = (key: keyof User, value: any) => {
     const tempUser: User = { ...this.state.user };

@@ -8,7 +8,7 @@ class HomePage extends Component {
       <Grid centered columns={2}>
         <Grid.Column>
           <Header as="h2" textAlign="center">
-            Home
+            Bienvenido a la tienda Karlo
           </Header>
         </Grid.Column>
       </Grid>

@@ -5,12 +5,14 @@ import "./styles.module.scss";
 class SalesOrdersPage extends Component {
   render() {
     return (
-      <Grid centered columns={2}>
-        <Grid.Column>
-          <Header as="h2" textAlign="center">
-            Sales orders
-          </Header>
-        </Grid.Column>
+      <Grid className="subheader" columns="equal">
+        <Grid.Row className="headerrow">
+          <Grid.Column floated="left">
+            <Header as="h2" textAlign="center">
+              Orden de compra
+            </Header>
+          </Grid.Column>
+        </Grid.Row>
       </Grid>
     );
   }

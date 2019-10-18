@@ -1,7 +1,35 @@
-#root {
-  background-color: #fafafa;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+#content-wrapper {
+  flex: 1 1;
+  background-color: #fcfcfc;
+}
+
+#main-content {
+  margin-left: 250px;
+  flex: 1;
+}
+
+.sidebar-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+}
+
+.iconLeft {
+  margin: 0 .5em 0 0 !important;
+  float: left !important;
+}
+
+.subheader {
+  padding: 15px 20px !important;
+  border-bottom: 1px solid #e9e9e9 !important;
+}
+
+.headerrow {
+  padding-bottom: 0 !important;
+}
+
+.page-content {
+  padding: 50px 30px 30px;
+  position: relative;
 }
