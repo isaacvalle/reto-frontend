@@ -3,4 +3,8 @@ export type userState = {
   email: string;
   password: string;
 };
+
+export type productState = {
+  tableProducts: any[]
+}
   
